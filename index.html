@@ -252,6 +252,119 @@ input,textarea{-webkit-user-select:text;user-select:text}
 .final-card input,.final-card textarea{display:block;width:100%;margin-top:4px;padding:9px 11px;border:1px solid #d9aaba;border-radius:12px;font:inherit;font-size:15px;background:#fff;color:#75465d;resize:none}
 #dDone{margin-top:12px;font-weight:600;color:#a64c75;font-size:15px}
 .final-card .replay{margin-top:16px;font-size:13px}
+
+/* ===== mobile fixes ===== */
+.ptitle-off{display:none}
+.ptitle{margin:0 0 10px}
+.intro-card p{white-space:normal;text-wrap:balance}
+@media(min-width:720px){.intro-card p{white-space:nowrap}.photo-frame+*{}}
+#app{min-height:100vh;min-height:100dvh}
+@media(max-width:700px){
+ #cloudFrame{--t:16px}
+ #app{padding:64px 10px 16px}
+ .tools{top:22px;right:22px}
+ .tool{width:38px;height:38px;font-size:15px}
+ .heading{margin-bottom:6px}
+ .heading p{display:none}
+ .heading h1{font-size:24px}
+ .book-wrap{width:calc(100vw - 44px);margin:auto 0 112px;height:calc(100vh - 300px);height:calc(100dvh - 300px);min-height:300px}
+ .book{grid-template-columns:1fr;padding:6px}
+ .book:before{display:none}
+ .left-sheet{display:none}
+ .right-sheet{border-radius:10px;padding:14px}
+ .right-sheet:before{display:none}
+ .flip-layer{left:6px;right:6px;width:auto;top:6px;bottom:6px}
+ .flip-front{border-radius:10px;padding:14px;display:flex;align-items:center;justify-content:center}
+ .flip-back{display:none}
+ .content h2{font-size:21px;margin:4px 0 10px}
+ .content .wish{font-size:17px;line-height:1.6}
+ .content .ornament{font-size:22px;margin:4px}
+ .photo-frame{height:auto;min-height:0;aspect-ratio:4/5;max-height:62%;width:auto;max-width:92%;padding:8px 8px 40px}
+ .photo-frame img{height:100%}
+ .photo-caption{font-size:15px;bottom:9px}
+ .nav{bottom:-44px}
+ .progress{bottom:-58px}
+ .tip{bottom:-100px;font-size:11px;padding:0 14px;line-height:1.35}
+ .final-card{width:90vw;padding:20px 16px}
+ .final-card h1{font-size:28px}
+ .yn{gap:12px}
+ .fields{flex-direction:column;gap:0}
+}
+@media(max-width:700px) and (max-height:620px){
+ .heading{display:none}
+ #app{padding-top:14px}
+ .tools{top:10px}
+ .book-wrap{height:calc(100dvh - 190px);min-height:240px;margin-bottom:96px}
+}
+@media(max-height:520px) and (min-width:701px){
+ .heading,.tip{display:none}
+ #app{padding-top:14px}
+ .tools{top:8px}
+ .book-wrap{height:calc(100dvh - 130px);min-height:200px;margin-bottom:70px}
+}
+
+/* ===== phone: keep the BOOK look in single-page mode ===== */
+@media(max-width:700px){
+ .book{padding:8px 13px 13px 25px;border-radius:7px 16px 16px 7px;background:linear-gradient(110deg,#a64c75,#d96f9a 50%,#bd527f);box-shadow:0 16px 30px #9c557342,inset 0 0 0 1px #ffffff55}
+ .book:before{display:block;left:0;top:0;bottom:0;width:21px;transform:none;border-radius:7px 0 0 7px;background:linear-gradient(90deg,#86395a,#c96a93 52%,#9a4468);box-shadow:inset -3px 0 5px #0000003a;border-right:1px solid #f1d9a8aa}
+ .book:after{content:"";position:absolute;right:30px;top:-7px;width:13px;height:50px;z-index:12;background:linear-gradient(#e8789f,#bd527f);clip-path:polygon(0 0,100% 0,100% 100%,50% 82%,0 100%);filter:drop-shadow(0 2px 2px #0003)}
+ .right-sheet{border-radius:3px 10px 10px 3px;padding:16px 14px;box-shadow:3px 3px 0 #fffaf6,3px 3px 0 1px #ead0d9,6px 6px 0 #fffaf6,6px 6px 0 1px #ead0d9,9px 9px 0 #fffaf6,9px 9px 0 1px #ead0d9}
+ .right-sheet:before{display:block;width:16px;background:linear-gradient(90deg,#00000026,transparent)}
+ .flip-layer{left:25px;right:13px;top:8px;bottom:13px}
+ .flip-front{border-radius:3px 10px 10px 3px;box-shadow:3px 3px 0 #fffaf6,3px 3px 0 1px #ead0d9}
+ .book-wrap{width:calc(100vw - 40px)}
+}
+
+/* ===== prettier pages ===== */
+.right-sheet,.flip-front{background:radial-gradient(circle at 100% 0,#fde1ebaa,#0000 40%),radial-gradient(circle at 0 100%,#fdecd2bb,#0000 42%),radial-gradient(#e49db61f 1px,#0000 1.6px) 0 0/16px 16px,linear-gradient(135deg,#fffdf8,#fff0f4)}
+.content{position:relative}
+.cn{position:absolute;width:30px;height:30px;border:1.5px solid #d98fab;opacity:.85;pointer-events:none}
+.cn:after{content:"";position:absolute;width:6px;height:6px;border-radius:50%;background:#e8789f}
+.cn.tl{top:-4px;left:-4px;border-right:0;border-bottom:0;border-radius:12px 0 0 0}.cn.tl:after{top:-4px;left:-4px}
+.cn.tr{top:-4px;right:-4px;border-left:0;border-bottom:0;border-radius:0 12px 0 0}.cn.tr:after{top:-4px;right:-4px}
+.cn.bl{bottom:-4px;left:-4px;border-right:0;border-top:0;border-radius:0 0 0 12px}.cn.bl:after{bottom:-4px;left:-4px}
+.cn.br{bottom:-4px;right:-4px;border-left:0;border-top:0;border-radius:0 0 12px 0}.cn.br:after{bottom:-4px;right:-4px}
+.pgno{position:absolute;bottom:-2px;left:50%;transform:translateX(-50%);font:italic 13px Georgia,serif;color:#b98ca0;letter-spacing:1px}
+.pgno:before,.pgno:after{content:"";display:inline-block;width:18px;height:1px;background:#dfb3c4;vertical-align:middle;margin:0 7px}
+.content h2:after{content:"";display:block;width:74px;height:2px;margin:9px auto 0;background:linear-gradient(90deg,#0000,#d96f9a,#0000)}
+.ptitle{font-size:13px!important;letter-spacing:3px;text-transform:uppercase;color:#a96d86!important;margin:0 0 14px!important;font-weight:600}
+.ptitle:after{display:none!important}
+.ptitle:before{content:"♥";font-size:11px;color:#e8789f;margin-right:8px}
+.photo-caption{font-size:16px!important;color:#9a5a75;text-align:center}
+.content .wish{position:relative}
+.content .ornament{color:#d98fab}
+@media(max-width:700px){
+ .cn{width:26px;height:26px}
+ .content{padding:8px 4px 22px}
+}
+
+/* ===== bigger photo frames ===== */
+.photo-frame{width:min(calc(100% - 22px),580px);height:calc(100% - 54px);min-height:240px;max-height:none;aspect-ratio:auto;padding:12px 12px 46px}
+.photo-caption{bottom:12px}
+@media(max-width:700px){
+ .content{padding:6px 2px 20px}
+ .photo-frame{width:calc(100% - 22px);max-width:none;height:calc(100% - 46px);max-height:none;aspect-ratio:auto;padding:9px 9px 44px}
+ .photo-frame img{height:100%}
+ .ptitle{margin:0 0 12px!important}
+}
+
+/* ===== album pages: 2-3 small photos + one message box ===== */
+.album-grid{flex:none;width:100%;height:54%;display:grid;grid-template-columns:repeat(2,1fr);grid-auto-rows:minmax(0,1fr);gap:24px 26px;padding:12px 14px 6px}
+.album-grid.n1{grid-template-columns:1fr}
+.album-grid.n3 .photo-frame:first-child{grid-column:1/-1}
+.album-grid .photo-frame{width:auto;max-width:none;height:auto;min-height:0;max-height:none;aspect-ratio:auto;padding:7px 7px 22px;transform:rotate(-2deg)}
+.album-grid .photo-frame:nth-child(even){transform:rotate(2deg)}
+.album-grid .photo-frame:hover{transform:rotate(0) scale(1.04)}
+.album-grid .photo-frame img{width:100%;height:100%;object-fit:cover}
+.album-grid .missing{padding:6px;font-size:12px}
+.note-box{position:relative;width:calc(100% - 20px);margin-top:22px;padding:15px 16px 13px;border:1.5px dashed #d98fab;border-radius:16px;background:#fffaf2;color:#9a5a75;font-style:italic;font-size:16px;line-height:1.6;text-align:center}
+.note-box:before{content:"♡ message";position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:#fff6ee;padding:0 10px;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-style:normal;color:#bd527f;white-space:nowrap}
+@media(max-width:700px){
+ .album-grid{gap:18px 20px;padding:10px 10px 4px;height:50%}
+ .album-grid .photo-frame{padding:5px 5px 16px}
+ .note-box{font-size:14px;padding:13px 12px 10px;margin-top:20px}
+}
+
 </style>
 </head>
 <body>
@@ -265,7 +378,7 @@ input,textarea{-webkit-user-select:text;user-select:text}
       <div class="env-body"></div><div class="env-flap"></div><div class="seal">♥</div>
 </div>
     <h1>Happy Birthday ....</h1>
-    <p style="font-size: 14px; line-height: 1.5; width: 100%;white-space: nowrap;">A little gift wrapped in warm wishes and lots of lovely memories.</p>
+    <p style="font-size:14px;line-height:1.5;width:100%">A little gift wrapped in warm wishes and lots of lovely memories.</p>
     <button class="primary" id="openBtn">Open Your Gift ✨</button>
     <div style="font-size:12px;color:#b17b91;margin-top:17px">go ahead, open your gift</div>
 </div>
@@ -339,12 +452,14 @@ const birthdayWish = `Happy Birthday, ....! Wishing you the happiest day, filled
 
 I hope we make many more beautiful memories and unforgettable moments together. 💗`;
 
-const memories = [
-  {src:"images/anh1.jpg",caption:"A memory worth remembering ♡"},
-  {src:"images/anh2.jpg",caption:"Happy moments together"},
-  {src:"images/anh3.jpg",caption:"Hope we have many more days like this!"},
-  {src:"images/anh4.jpg",caption:"Thank you for all the wonderful memories"}
+// Each album page holds 2-3 photos and ONE message box for the whole page.
+const albumPages = [
+  {title:"Memories I", note:"A memory worth remembering, and so many happy moments together ♡",
+   photos:["images/anh1.jpg","images/anh2.jpg"]},
+  {title:"Memories II", note:"Hope we have many more days like this! Thank you for all the wonderful memories.",
+   photos:["images/anh3.jpg","images/anh4.jpg"]}
 ];
+const memories = albumPages.flatMap(a=>a.photos.map(src=>({src})));
 
 const finalWish = `Wishing .... a bright, joyful year
 and a wonderful new journey ahead!
@@ -358,7 +473,7 @@ document.getElementById("finalText").textContent=replaceName(finalWish);
 const pages=[
  {type:"cover",title:"A little gift for you",text:`For ${recipientName}\n\nA little something made just for you.`},
  {type:"wish",title:"A wish from my heart",text:replaceName(birthdayWish)},
- ...memories.map((m,i)=>({type:"photo",title:`Memory No. ${String(i+1).padStart(2,"0")}`,...m}))
+ ...albumPages.map(a=>({type:"album",title:a.title,note:a.note,photos:a.photos}))
 ];
 pages.push({type:"end",title:"The End"});let current=0,turning=false,petalsOn=true;
 const right=document.getElementById("rightSheet"),left=document.getElementById("leftSheet");
@@ -369,9 +484,15 @@ function renderPage(p){
  if(p.type==="cover")return `<div class="content"><div style="font-size:55px">🎂</div><div class="ornament">✧ ♡ ✧</div><h2>${p.title}</h2><p class="wish">${p.text}</p><div class="ornament">💕 💌 💕</div><p style="font-size:12px;color:#a7798e">TURN THE PAGE TO BEGIN</p></div>`;
  if(p.type==="end")return `<div class="content"><div style="font-size:52px">🥹</div><h2 style="font-size:clamp(26px,4vw,40px)">The End!</h2><p class="wish">Thank you for reading this whole card.</p><p class="end-hint">Double-tap the heart 🎁</p><button class="heart-btn" type="button" aria-label="Double-tap to open the gift">♥</button></div>`;
  if(p.type==="wish")return `<div class="content"><div class="ornament">💗</div><h2>${p.title}</h2><p class="wish">${p.text}</p><div class="ornament">♡ ✧ ♡</div></div>`;
- return `<div class="content"><h2>${p.title}</h2><div class="photo-frame"><img src="${p.src}" alt="${p.caption}" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><div class="missing" style="display:none">Could not find ${p.src}<br>Please add your photos to the images folder.</div><div class="photo-caption">${p.caption}</div></div></div>`;
+ return `<div class="content"><h2 class="ptitle">${p.title}</h2><div class="album-grid n${p.photos.length}">${p.photos.map(src=>`<div class="photo-frame"><img src="${src}" alt="Memory photo" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><div class="missing" style="display:none">Add<br>${src}</div></div>`).join("")}</div><div class="note-box">${p.note}</div></div>`;
 }
-function leftHTML(current){return current===0?`<div class="left-deco">💗</div><h2>Our Little Memories</h2><p><div style="white-space: nowrap">A little book that keeps our most beautiful moments.</p><div style="font-size:27px">♡ ✧ ♡</div>`: `<div class="content"><div class="ornament">✿</div><h2>${pages[current-1].title}</h2><p class="wish">A memory kept safe<br><span style="font-size:30px">♡</span></p></div>`}
+/* page decorations: corner brackets + page number */
+const CN='<i class="cn tl"></i><i class="cn tr"></i><i class="cn bl"></i><i class="cn br"></i>';
+const _rpOrig=renderPage;
+renderPage=function(p){let h=_rpOrig(p);const n=p?pages.indexOf(p)+1:"";
+ h=h.replace('<div class="content">','<div class="content">'+CN);
+ return h.replace(/<\/div>$/,(n?'<div class="pgno">'+n+'</div>':'')+'</div>')};
+function leftHTML(current){return current===0?`<div class="left-deco">💗</div><h2>Our Little Memories</h2><p>A little book that keeps our most beautiful moments.</p><div style="font-size:27px">♡ ✧ ♡</div>`: `<div class="content"><div class="ornament">✿</div><h2>${pages[current-1].title}</h2><p class="wish">A memory kept safe<br><span style="font-size:30px">♡</span></p></div>`}
 function update(skip){
  if(skip!=="right")right.innerHTML=renderPage(pages[current]);
  if(skip!=="left")left.innerHTML=leftHTML(current);
@@ -403,7 +524,7 @@ prev.addEventListener("click",()=>turn(-1));next.addEventListener("click",()=>tu
 const bookEl=document.getElementById("book");
 bookEl.addEventListener("pointerdown",e=>{if(turning||giftBusy)return;dg={x:e.clientX,started:false,t:e.target};bookEl.setPointerCapture(e.pointerId)});
 bookEl.addEventListener("pointermove",e=>{
- if(!dg)return;const dx=e.clientX-dg.x,W=bookEl.offsetWidth/2;
+ if(!dg)return;const dx=e.clientX-dg.x,W=bookEl.offsetWidth/(matchMedia("(max-width:700px)").matches?1:2);
  if(!dg.started){if(Math.abs(dx)<8)return;const d=dx<0?1:-1;if(!startFlip(d)){dg=null;return}dg.started=true;dg.dir=d}
  const k=Math.min(1,Math.max(0,Math.abs(dx)/W));
  dg.p=dg.dir>0?(dx<0?k:0):(dx>0?1-k:1);setFlip(dg.p);
@@ -419,12 +540,12 @@ bookEl.addEventListener("pointerup",dragEnd);bookEl.addEventListener("pointercan
 /* hearts on the cloud frame */
 function buildCloudHearts(){
  const box=document.getElementById("cfHearts");box.innerHTML="";
- const W=innerWidth,H=innerHeight,t=Math.min(44,Math.max(22,W*.036));
+ const W=innerWidth,H=innerHeight,t=W<700?16:Math.min(44,Math.max(22,W*.036));
  const C=["#e8789f","#f29bb8","#d9608a","#ee8aa9","#e0668f"];let n=0;
  const add=(x,y)=>{const h=document.createElement("span");h.className="cf-heart";h.textContent=n%7===3?"💗":"♥";
   h.style.left=x+"px";h.style.top=y+"px";h.style.fontSize=(t*.5+Math.random()*t*.35)+"px";h.style.color=C[n%5];
   h.style.setProperty("--r",(Math.random()*40-20)+"deg");h.style.animationDelay=(-Math.random()*2.6)+"s";box.appendChild(h);n++};
- const gap=Math.max(54,t*2.1);
+ const gap=W<700?78:Math.max(54,t*2.1);
  for(let x=gap*.6;x<W-gap*.3;x+=gap+Math.random()*14){add(x,t*.28+Math.random()*t*.2);add(x+gap*.5,H-t*.95+Math.random()*t*.2)}
  for(let y=gap;y<H-gap;y+=gap+Math.random()*14){add(t*.16+Math.random()*t*.15,y);add(W-t*.95+Math.random()*t*.2,y+gap*.5)}
 }
@@ -535,7 +656,7 @@ document.addEventListener("pointerdown",e=>{
 /* zoom photo */
 const lb=document.getElementById("lb");
 function zoom(frame){const im=frame.querySelector("img");if(!im||im.style.display==="none"||giftBusy||turning)return;
- lb.querySelector("img").src=im.src;lb.querySelector("p").textContent=frame.querySelector(".photo-caption").textContent;lb.classList.add("show")}
+ lb.querySelector("img").src=im.src;{const nb=frame.closest(".content").querySelector(".note-box");lb.querySelector("p").textContent=nb?nb.textContent:""};lb.classList.add("show")}
 lb.addEventListener("click",()=>lb.classList.remove("show"));
 document.addEventListener("keydown",e=>{if(e.key==="Escape")lb.classList.remove("show")});
 
@@ -566,12 +687,12 @@ document.addEventListener("keydown",e=>{
 
 /* ambient decorations */
 const colors=["#f5a6c2","#f7c56f","#aebbe9","#a8d9c7","#d5a3dc","#ffb18e"];
-for(let i=0;i<12;i++){let b=document.createElement("i");b.className="balloon";b.style.left=Math.random()*100+"%";b.textContent="♥";b.style.fontSize=(22+Math.random()*26)+"px";b.style.color=["#e8789f","#f29bb8","#d9608a","#ee8aa9"][i%4];b.style.animationDuration=12+Math.random()*15+"s";b.style.animationDelay=-Math.random()*25+"s";document.getElementById("ambient").appendChild(b)}
-function makePetals(){const root=document.getElementById("petals");for(let i=0;i<26;i++){let p=document.createElement("i");p.className="petal";p.textContent="♥";p.style.fontSize=(14+Math.random()*18)+"px";p.style.left=Math.random()*100+"%";p.style.animationDuration=9+Math.random()*12+"s";p.style.animationDelay=-Math.random()*20+"s";p.style.opacity=.45+Math.random()*.45;root.appendChild(p)}}
+for(let i=0;i<(innerWidth<700?6:12);i++){let b=document.createElement("i");b.className="balloon";b.style.left=Math.random()*100+"%";b.textContent="♥";b.style.fontSize=(22+Math.random()*26)+"px";b.style.color=["#e8789f","#f29bb8","#d9608a","#ee8aa9"][i%4];b.style.animationDuration=12+Math.random()*15+"s";b.style.animationDelay=-Math.random()*25+"s";document.getElementById("ambient").appendChild(b)}
+function makePetals(){const root=document.getElementById("petals");for(let i=0;i<(innerWidth<700?12:26);i++){let p=document.createElement("i");p.className="petal";p.textContent="♥";p.style.fontSize=(14+Math.random()*18)+"px";p.style.left=Math.random()*100+"%";p.style.animationDuration=9+Math.random()*12+"s";p.style.animationDelay=-Math.random()*20+"s";p.style.opacity=.45+Math.random()*.45;root.appendChild(p)}}
 makePetals();
 for(let i=0;i<12;i++){const h=document.createElement("i");h.className="heart-float";h.textContent=["♡","♥","✧"][i%3];h.style.left=Math.random()*100+"%";h.style.animationDelay=Math.random()*9+"s";h.style.animationDuration=(8+Math.random()*7)+"s";h.style.fontSize=(13+Math.random()*18)+"px";document.getElementById("hearts").appendChild(h)}
 for(let i=0;i<3;i++){const orb=document.createElement("i");orb.className="glow-orb";orb.style.left=(Math.random()*85)+"%";orb.style.top=(Math.random()*80)+"%";orb.style.animationDelay=(-Math.random()*8)+"s";document.getElementById("ambient").appendChild(orb)}
-for(let i=0;i<22;i++){let s=document.createElement("i");s.className="spark";s.style.left=Math.random()*100+"%";s.style.top=Math.random()*100+"%";s.style.animationDelay=Math.random()*3+"s";s.style.animationDuration=1.5+Math.random()*2+"s";document.getElementById("sparkles").appendChild(s)}
+for(let i=0;i<(innerWidth<700?10:22);i++){let s=document.createElement("i");s.className="spark";s.style.left=Math.random()*100+"%";s.style.top=Math.random()*100+"%";s.style.animationDelay=Math.random()*3+"s";s.style.animationDuration=1.5+Math.random()*2+"s";document.getElementById("sparkles").appendChild(s)}
 document.getElementById("petalBtn").addEventListener("click",()=>{petalsOn=!petalsOn;document.getElementById("petals").style.display=petalsOn?"block":"none";document.getElementById("petalBtn").classList.toggle("active",petalsOn)});
 
 /* Happy Birthday melody, synthesized locally with a soft piano-like tone.
